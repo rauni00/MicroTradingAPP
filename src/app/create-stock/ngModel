@@ -1,0 +1,60 @@
+=>asyncvalidator:
+Async validator is used to validate data against the data located at remote server
+
+=>Dirty
+The user has changed the value in the UI
+
+=>Disabled
+That the control is disabled in the UI
+
+=>enable
+That the control is enabled in the UI
+
+=>errors
+Show the control's validation errors
+
+=>formDirective
+
+=>invalid
+The control is invalid, meaning that an error exists in the input value
+
+=>Path
+Returns an array that represents the path from the top-level form to this
+control. Each index is the string name of the control on that level.
+
+=>pending
+Report a control is pending, meaning that that async validation is occurring
+and errors are not yet available for the input value
+
+=>pristine
+the control is pristine the user has not yet changed the value in the UI
+
+=>status:
+Reports the validation status of the control. Possible values include: 'VALID',
+'INVALID', 'DISABLED', and 'PENDING'
+
+=>statusChanges:
+Returns a multicasting observable that emits a validation status whenever
+it is calculated for the control
+
+=>touched:
+Reports whether the control is touched, meaning that the user has triggered
+a blur event on it
+
+=>untouched:
+Reports whether the control is untouched, meaning that the user has not yet
+triggered a blur event on it
+
+=>valid:
+Reports whether the control is valid. A control is considered valid if no
+validation errors exist with the current value
+
+=>validator:
+Synchronous validator function composed of all the
+
+=>value:
+Reports the value of the control if it is present
+
+=>valueChanges:
+Returns a multicasting observable of value changes for the control that emits  
+ every time the value of the control changes in the UI or programmatically

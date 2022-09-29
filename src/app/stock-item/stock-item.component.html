@@ -1,0 +1,226 @@
+<div class="stock-container">
+    <div class="name">{{ stock.name + " (" + stock.code + ")" }}</div>
+    <div class="exchange">{{ stock.exchange }}</div>
+    <div class="price" [class.positive]="stock.price > stock.previousPrice" [class.negative]="stock.price <= stock.previousPrice">
+        $ {{ stock.price }}
+    </div>
+    <button class="btn btn-success" (click)="onToggleFavorite($event)" *ngIf="!stock.favorite">
+    Add to Favorite
+  </button>
+    <button class="btn btn-danger" (click)="onToggleFavorite($event)" *ngIf="stock.favorite">
+    Remove from Favorite
+  </button>
+</div>
+
+<!-- !! FOR SERVICE   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+<!-- <div class="stock-container">
+    <div class="name">{{ stock.name + " (" + stock.code + ")" }}</div>
+    <div class="exchange">{{ stock.exchange }}</div>
+    <div class="price" [class.positive]="stock.isPositiveChange()" [class.negative]="!stock.isPositiveChange()">
+        $ {{ stock.price }}
+    </div>
+    <button class="btn btn-success" (click)="onToggleFavorite($event)" *ngIf="!stock.favorite">
+    Add to Favorite
+  </button>
+    <button class="btn btn-danger" (click)="onToggleFavorite($event)" *ngIf="stock.favorite">
+    Remove from Favorite
+  </button>
+</div> -->
+<!-- !! FOR SERVICE   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
+<!-- <div class="stock-container">
+    <div class="name">{{ stock.name + " (" + stock.code + ")" }}</div>
+    <div class="exchange">{{ stock.exchange }}</div>
+    <div class="price">$ {{ stock.price }}</div> -->
+<!-- [class.negative]="!stock.isPositiveChange()" 
+     [class.positive]="stock.isPositiveChange()" -->
+<!-- <button class="btn btn-success" (click)="onToggleFavorite($event)" *ngIf="!stock.favorite">
+    Add to Favorite
+  </button>
+    <button class="btn btn-danger" (click)="onToggleFavorite($event)" *ngIf="stock.favorite">
+    Remove from Favorite
+  </button>
+</div> -->
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<div class="stock-container" *ngFor="let stock of stocks; index as i; trackBy: trackStockByCode">
+<div class="stock-container">
+    <div class="name">
+        {{ stock.name + " (" + stock.code + ")" }}
+    </div>
+    <div class="price" [class]="stock.isPositiveChange() ? 'positive' : 'negative'">
+        ${{ stock.price }}
+    </div>
+     <button class="btn btn-success" (click)="toggleFavorite($event, i)" [disabled]="stock.favorite"> -->
+<!-- <button class="btn btn-success" (click)="onToggleFavorite($event)" *ngIf="!stock.favorite">
+    Add to Favorite
+  </button>
+    <button class="btn btn-danger" (click)="changeStockPrice()">
+    Change Price
+  </button>
+</div> -->
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+  1 => ==================> Template Driven Forms <====================================
+  =====>  app.module.ts
+    import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+=====>app.component.HTML
+    => firstly we take a form in HTML 
+  => Create a #variable name means we create a variable in the template form
+  => And bind that variable with pre-define ngForm Directive 
+     Like #VariableName="ngForm"
+     => at that place we define an pre-define click event and bind with a method
+     => like (ngSubmit)="onSubmit(#variableName.value)"
+     and  create a method on ts file that perform work
+     and pass the parameter in the method that is #variableName that are create
+     => ngModel is pre-define Directive that bind the element to ngForm
+     what is ngModel =>
+     concatenate by => [()]
+     two way data binding
+     from component to view and vice versa
+    -->
+<!--
+    ====> Example of Template Driven Forms -->
+
+<!--  IN HTML========>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  <div class="container mt-4 text-white shadow p-3 md-5 bg-dark rounded">
+    <form #mediaItem="ngForm" (ngSubmit)="onSubmit(mediaItem.value)">
+      <div class="form group font-weight-bold text-success text-centre col-md-12">
+                <h2>Add Media To Watch</h2>
+              </div>
+              <div class="row">
+                <div class="form-group font-weight-bold text-light col-md-4">
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" ngModel />
+                  </div>
+                  <div class="form-group text-light font-wight-bold col-md-3">
+                    <label>Medium</label>
+                    <select name="medium" class="form-control" ngModel>
+              <option value="choice">Choice....</option>
+              <option value="Movies">Movies</option>
+              <option value="Series">Series</option>
+            </select>
+                </div>
+
+                <div class="form-group text-light font-weight-bold col-md-3">
+                    <label>Category</label>
+                    <select name="category" class="form-control" ngModel>
+                      <option value="Action">Action</option>
+                      <option value="Science Friction">Science Friction</option>
+            </select>
+          </div>
+          <div class="form-group text-light font-weight-bold col-md-2">
+            <label>Year</label>
+                    <input type="date" name="year" ngModel />
+                  </div>
+                <button class="btn btn-primary">Save</button>
+              </div>
+        </form>
+    </div> -->
+<!-- -->
+
+<!-- <button class="btn btn-danger" (click)="changeStockPrice2()">
+Decrease Price
+</button> -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- ! Sibling structural directive -->
+<!-- *ngIf="stocks.length > 2" -->
+<!-- 
+<p>
+    {{ stocks.length }}
+</p> -->
+<!-- ! ===========================================================================================-->
+<!-- *ngIf="!stocks.favorite" -->
+<!-- <div class="stock-container">
+    <div class="name">{{ stock.Data[1].name + " (" + stock.code + ")" }}</div>
+    <div class="price" [ngStyle]="stockStyle">${{ stock.price }}</div>
+    <button class="btn btn-success" (click)="toggleFavorite()" *ngIf="!stock.favorite" [disabled]="stock.favorite">
+    Add to Favorite
+  </button>
+</div>
+<div class="stock-container">
+    <div class="name">{{ stock.Data[2].name + " (" + stock.code + ")" }}</div>
+    <div class="price" [ngStyle]="stockStyle">${{ stock.price }}</div>
+    <button class="btn btn-success" (click)="toggleFavorite()" *ngIf="!stock.favorite" [disabled]="stock.favorite">
+    Add to Favorite
+  </button>
+</div> -->
+
+<!-- <div [ngClass]="NG">hello</div> -->
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- !------------------------------Attribute directive----------------------------------->
+<!-- 
+    [class]  
+    [class]="stock.isPositiveChange() ? 'positive' : 'negative'"
+    <div class="price" [class.negative]="!stock.isPositiveChange()" [class.positive]="stock.isPositiveChange()">
+        ${{ stock.price }}
+    </div>
+   [ngClass] 
+   [ngClass]="stockClasses"> [ngStyle]
+   
+   <div class="price" [ngStyle]="stockStyle">${{ stock.price }}</div>
+   <div [ngStyle]="{ color: 'red', 'background-color': 'black' }">NgStyle</div>
+<div class="price" [style.background-color]="stock.isPositiveChange() ? 'green' : 'red'">
+        ${{ stock.price }}
+    </div>
+
+ -->
+<!--!--------------------------- Structural Directive----------------------------------  -->
+<!-- 
+   These are the pre-define keyword  in the structural directive *ngFor for  working  
+   *ngFor="index as i;
+    first as first;
+    last as last;
+    even as even;
+    odd as odd" 
+                        ! Markup interpolate the keyword 
+    <div>It show the index of Items {{ i }}</div>
+    <div>first is ={{ first }}</div>
+    <div>last is ={{ last }}</div>
+    <div>Show the even item ={{ even }}</div>
+    <div>Show the odd item ={{ odd }}</div>
+         ------------markup
+         <div class="stock-container" *ngFor="let stock of stocks;
+    index as i;
+    first as first;
+    last as last;
+    even as even;
+    odd as odd">
+    <div class="name">{{ stock.name + " (" + stock.code + ")" }}</div>
+    <div class="price" [class]="stock.isPositiveChange() ? 'positive' : 'negative'">
+        ${{ stock.price }}
+    </div>
+    <button class="btn btn-success" (click)="toggleFavorite($event, i)" [disabled]="even">
+    Add to Favorite
+  </button>
+</div>
+
+-->
+<!-- ! trackBy  -->
+<!-- 
+  trackBy functions is when the model that NgForOf iterates
+      over contains a property with a unique identifier
+
+       The angular js that how angular js will track the
+       association between DOM and the model (i.e. collection).
+       <button class="btn btn-dark" (click)="refresh()">Refresh</button>
+ refresh() {
+     this.stocks = [
+       new Stock("Tata Consultancy Services", "TCS", 85, 80),
+       new Stock("Tata", "TCS", 85, 80),
+       new Stock("Hindustan Computers Limited", "HCL", 60, 80),
+       new Stock("GOGGLE", "G", 75, 80),
+      new Stock("Hindustan", "H", 63, 80),
+      new Stock(" Computers", "C", 80, 80),
+       new Stock("Limited", "HCL", 40, 80),
+       new Stock("Limited", "HCL", 40, 80),
+     ];
+  }
+  
+      -->

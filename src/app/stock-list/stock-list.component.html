@@ -1,0 +1,12 @@
+<div style="text-align: center">
+    <div style="font-weight: bold; font-size: 25px">Type and find Stock Name</div>
+    <input name="searchBox" [(ngModel)]="searchString" placeholder="Search Here" (keyup)="search()" />
+</div>
+<h2>We have found {{ stocks$ }} stocks!</h2>
+<!-- ?.length -->
+<app-stock-item *ngFor="let stock of stocks$ | async as stocks" [stock]="stock">
+</app-stock-item>
+
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- <app-stock-item *ngFor="let stock of stocks$ | async" [stock]="stock" (toggleFavorite)="onToggleFavorite($event)">
+</app-stock-item> -->

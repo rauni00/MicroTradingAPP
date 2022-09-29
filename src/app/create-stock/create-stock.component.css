@@ -1,0 +1,84 @@
+input {
+    font-size: 18px;
+}
+
+button {
+    size: 15px;
+    font-size: 15px;
+}
+
+.MessageCode {
+    color: red;
+}
+
+.notable-people {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+* {
+    padding: 2px;
+}
+
+.stock-name .ng-valid,
+.stock-code .ng-pristine,
+.stock-price .ng-pristine {
+    background-color: rgb(128, 202, 128);
+}
+
+.stock-name .ng-invalid,
+.stock-code .ng-dirty,
+.stock-price .ng-touched {
+    background-color: rgb(252, 252, 252);
+}
+
+h2 {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 18px;
+    padding: 5px;
+    text-align: center;
+}
+
+input {
+    border-radius: 10px;
+}
+
+.form-group {
+    height: auto;
+    width: 400px;
+    /* width: auto; */
+    border: 3px solid;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7px;
+    border-radius: 20px;
+    border-style: groove;
+    border-top-color: black;
+    border-bottom-color: rgb(65, 119, 189);
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-bottom-style: dashed;
+    border-top-style: dashed;
+    border-left-style: dashed;
+    border-right-style: dashed;
+    /* color: rgb(255, 253, 240); */
+}
+
+span {
+    background-color: black;
+    color: wheat;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 10px;
+}
